@@ -21,7 +21,6 @@ let gameController = (() => {
     function isOver(_board) {
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
-                console.log(_board[i][j]);
                 if (_board[i][j] === '')
                     return false;
             }
@@ -68,7 +67,6 @@ let gameController = (() => {
                 output.textContent = 'Player2 has won';
             }
         } else if (isOver(_board)) {
-            // output = document.getElementById('p2');
             output.textContent = 'Draw';
         }
     }
@@ -90,7 +88,6 @@ let displayController = (() => {
         let output = document.getElementById('p1');
         if (isX) {
             let output = document.getElementById('p1');
-            console.log(output.textContent);
             output.textContent = 'Player1\'s turn';
 
         } else if (isX === false) {
@@ -107,15 +104,13 @@ let displayController = (() => {
                 }
                 gameController.checkBoardState();
                 isX === true ? isX = false : isX = true;
-                console.log(isX);
                 if (isX) {
                     let output = document.getElementById('p1');
-                    console.log(output.textContent);
-                    output.textContent = 'Player1\'s turn';
+                    output.textContent = "Player1's turn";
 
                 } else if (isX === false) {
                     let output = document.getElementById('p1');
-                    output.textContent = 'Player2\'s turn';
+                    output.textContent = "Player2's turn";
                 }
             }, {
                 once: true
